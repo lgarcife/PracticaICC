@@ -10,7 +10,7 @@
  * 
  * Created on December 18, 2020, 6:06 PM
  */
-
+#include <stdio.h>
 #include "pracFuns.h"
 int resolTS (int n, double **A, double *b, double *x, double tol)
 {
@@ -40,9 +40,20 @@ void prodMatVec (double **A, double *x, double *y, int n) {
     for(int i = 0; i < n; i++) {
         y[i] = 0.0;
         for(int j = 0; j < n; j++) {
-            printf("Aij: %lf * xj: %lf", A[i][j], x[j]);
             y[i] += A[i][j] * x[j];
         }
-        printf(" = yi: %lf\n", y[i]);
     }
+}
+double norma2 (int n, double *z) {
+    double norma, norma_2;
+    norma = 0;
+    norma_2 = 0;
+    for (int i = 0; i < n; i++) {
+        norma += z[i]*z[i];
+    }
+    for (double i = 0.00000; i*i < norma; i += 0.00001) {
+        norma_2 = i;
+    }
+    printf("\n");
+    return norma_2;
 }
