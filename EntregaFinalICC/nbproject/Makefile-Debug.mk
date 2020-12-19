@@ -66,12 +66,12 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/entregafinalicc: ${OBJECTFILES}
 ${OBJECTDIR}/pracFuns.o: pracFuns.c
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/pracFuns.o pracFuns.c
+	$(COMPILE.c) -g -s -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/pracFuns.o pracFuns.c
 
 ${OBJECTDIR}/pract1.o: pract1.c
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/pract1.o pract1.c
+	$(COMPILE.c) -g -s -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/pract1.o pract1.c
 
 # Subprojects
 .build-subprojects:

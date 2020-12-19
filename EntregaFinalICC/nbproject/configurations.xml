@@ -37,6 +37,9 @@
         <rebuildPropChanged>false</rebuildPropChanged>
       </toolsSet>
       <compileType>
+        <cTool>
+          <stripSymbols>true</stripSymbols>
+        </cTool>
       </compileType>
       <item path="pracFuns.c" ex="false" tool="0" flavor2="0">
       </item>

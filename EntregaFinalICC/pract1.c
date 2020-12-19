@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-
 #include "pracFuns.h"
 
 int main (void){
@@ -23,10 +22,11 @@ int main (void){
         }
     }
     //Reservem memoria per els vectors
-    double *x, *b, *y;
+    double *x, *b, *y, *z;
     x = (double *) malloc(n * sizeof(double));
     b = (double *) malloc(n * sizeof(double));
     y = (double *) malloc(n * sizeof(double));
+    z = (double *) malloc(n * sizeof(double));
     if ( x == NULL || b == NULL || y == NULL) {
         printf("No hi ha prou memoria");
         return 3;
@@ -66,6 +66,8 @@ int main (void){
     prodMatVec(A, x, y, n);
     printf("\nVector = Ax - b:\n");
     for (int i = 0; i < n; i++) {
-        printf("%lf - %lf = %lf\n", y[i], b[i], y[i]-b[i]);
+        z[i] = y[i]-b[i];
+        printf("%lf - %lf = %lf\n", y[i], b[i], z[i]);
     }
+    printf("norma2: %lf", norma2(n, z));
 }
